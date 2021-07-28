@@ -338,11 +338,19 @@ $(document).ready(
                     var r = td2[i].innerText || td2[i].innerHTML || td2[i].textContent;
                     if (l.trim() != r.trim()) {
                         var $td1 = $(td1[i]), color = $td1.css('background-color');
-                        $td1.css({
-                            'background-color': '#afa'
-                        }).animate({
-                            'background-color': color
-                        }, 500);
+                        if (l.trim() < r.trim()) {
+                            $td1.css({
+                                    'background-color': '#68f'
+                                }).animate({
+                                    'background-color': color
+                                }, 500);
+                        } else {
+                                $td1.css({
+                                    'background-color': '#afa'
+                                }).animate({
+                                    'background-color': color
+                                }, 500);
+                        }
                         if (l.trim() != '0') {
                             $td1.addClass('hasValue');
                         }
